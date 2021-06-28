@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "935869443734",
+    "project_id": "pay-flow-nlw6-iran",
+    "storage_bucket": "pay-flow-nlw6-iran.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935869443734:android:78e5ddc1494ec01728dcb7",
+        "android_client_info": {
+          "package_name": "com.example.payflow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935869443734-u9a6uhplrhna7l6cffkanj9mthgbsa0m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.payflow",
+            "certificate_hash": "d7cac34868f73f755ce0fb67f0afb48e63f40a48"
+          }
+        },
+        {
+          "client_id": "935869443734-ftl4ds08qgvg9bd15ijrg2ho5v3c2prg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzuJMBz_Ry9kAK01HogHYv3sKXCmyIiQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "935869443734-ftl4ds08qgvg9bd15ijrg2ho5v3c2prg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
