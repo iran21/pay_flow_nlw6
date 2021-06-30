@@ -11,33 +11,26 @@ void main() {
 }
 
 class AppFirebase extends StatefulWidget {
-  const AppFirebase({ Key? key }) : super(key: key);
+  const AppFirebase({Key? key}) : super(key: key);
 
   @override
   _AppFirebaseState createState() => _AppFirebaseState();
 }
 
 class _AppFirebaseState extends State<AppFirebase> {
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
-final Future<FirebaseApp> _initialization = Firebase.initializeApp();
-
-   @override
+  @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      // Initialize FlutterFire:
       future: _initialization,
       builder: (context, snapshot) {
-        // Check for errors
         if (snapshot.hasError) {
           return NoConexionPage();
         }
-
-        // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
           return AppWidget();
         }
-
-        // Otherwise, show something whilst waiting for initialization to complete
         return CircularProgressIndicator();
       },
     );

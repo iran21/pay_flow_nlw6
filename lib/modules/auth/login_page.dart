@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:payflow/shared/theme/app_colors.dart';
 import 'package:payflow/shared/theme/app_images.dart';
 import 'package:payflow/shared/theme/app_textstyle.dart';
@@ -12,6 +13,11 @@ class AuthPage extends StatefulWidget {
 }
 
 class _AuthPageState extends State<AuthPage> {
+  GoogleSignIn _googleSignIn = GoogleSignIn(
+    scopes: [
+      'email',
+    ],
+  );
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -54,7 +60,13 @@ class _AuthPageState extends State<AuthPage> {
                     ),
                   ),
                   SocialLoginButton(
-                    onTap: () {
+                    onTap: () async {
+                      var response;
+                      try {
+                        response = await _googleSignIn.signIn();
+                      } catch (e) {
+                        print(response);
+                      }
                       print('clicou');
                     },
                   )
