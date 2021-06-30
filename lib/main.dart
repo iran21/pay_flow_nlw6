@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:payflow/modules/auth/login_page.dart';
+import 'package:payflow/modules/login/login_page.dart';
 import 'package:payflow/modules/home/home_page.dart';
 import 'package:payflow/modules/noconexion/noconexion_page.dart';
 import 'package:payflow/modules/splash/splash_page.dart';
@@ -43,12 +43,16 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Pay Flow',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: AppColors.primary,
-      ),
-      home: AuthPage(),
-    );
+        title: 'Pay Flow',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: AppColors.primary,
+        ),
+        initialRoute: '/splash',
+        routes: {
+          '/splash': (context) => SplashPage(),
+          '/login': (context) => LoginPage(),
+          '/home': (context) => HomePage(),
+        });
   }
 }
