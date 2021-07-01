@@ -10,7 +10,7 @@ class AuthController {
 
   get user => _user!;
 
-  ///Método para avaliar se usuário já está logado
+///Método para avaliar se usuário já está logado, recebe um objeto UserModel
   void setUser(BuildContext context, UserModel? user) {
     if (user != null) {
       _isAuthenticated = true;
@@ -21,16 +21,16 @@ class AuthController {
     }
   }
 
-  ///Método para salvar dados do usuário já logado
+///Método para salvar dados do usuário já logado
   Future<void> saveUser(UserModel user) async {
     final instance = await SharedPreferences.getInstance();
-    instance.setString('user', user);
+    instance.setString('user', user.toJson());
   }
 
 ///Método para recuperar os dados do usuário da memória
   Future<void> currentUser(BuildContext context, UserModel user)async{
     final instance = await SharedPreferences.getInstance();
-    final user = instance.get("user");
-    setUser(context, user);
+    final json = instance.getString("user") as String;
+    setUser(context, UserModel.fromJson(json));
   }
 }
