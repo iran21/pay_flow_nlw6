@@ -17,7 +17,7 @@ class UserModel {
     };
   }
 
-  ///Método que retorna uma string com estrtutura de um objeto json
+  ///Método que retorna uma string com estrutura de um objeto json, usando implicitamente o encode
   String toJson() {
     return jsonEncode(toMap());
   }
@@ -25,7 +25,7 @@ class UserModel {
   ///Método factory que recebe a String com estrtutura JSON, e a transformará em um objeto json
   factory UserModel.fromJson(String json) {
     return UserModel.fromMap(jsonDecode(json));
-  } 
+  }
 
   ///Método que recebe um mapa e retorna a instância de [UserModel]
   factory UserModel.fromMap(Map<String, dynamic> map) {
