@@ -79,7 +79,9 @@ class _HomePageState extends State<HomePage> {
                   borderRadius: BorderRadius.circular(5),
                   color: AppColors.primary),
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/barcode_scanner');
+                },
                 icon: Icon(
                   Icons.add_box_outlined,
                   color: Colors.white,
