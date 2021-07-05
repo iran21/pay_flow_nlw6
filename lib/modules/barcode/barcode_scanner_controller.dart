@@ -45,7 +45,7 @@ class BarcodeScannerController {
           final InputImageRotation imageRotation = InputImageRotation.Rotation_0deg;
 
           final InputImageFormat imageFormat =
-              InputImageFormatMethods.fromRawValue(cameraImage.format.raw) ?? InputImageFormat.NV21;
+              InputImageFormatMethods.fromRawValue(cameraImage.format.raw) ?? InputImageFormat.YUV420;
 
           final planeData = cameraImage.planes
               .map(

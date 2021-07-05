@@ -28,7 +28,7 @@ neste caso eu retiro a responsabilidade do meu construtor default de criar todas
 
   bool get showCamera => isCameraAvailable && error.isEmpty;
 
-  bool get hasError => error.isEmpty;
+  bool get hasError => error.isNotEmpty;
 
   bool get hasBarcode => barcode.isNotEmpty;
 }

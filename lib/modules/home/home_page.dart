@@ -46,9 +46,8 @@ class _HomePageState extends State<HomePage> {
               ),
               trailing: Container(
                 child: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.purarteadesivos.com.br%2Fproduto%2Fpikachu%2F&psig=AOvVaw2-YF0oINgl-QEYm3_FE2Rf&ust=1625435310033000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCKDWssPwx_ECFQAAAAAdAAAAABAD'),
-                  radius: 24,
+                  // backgroundImage: NetworkImage(
+                  // radius: 24,
                 ),
               ),
             ),
