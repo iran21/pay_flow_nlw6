@@ -7,7 +7,7 @@ class UserModel {
 
   UserModel({required this.name, this.photoURL});
 
-//Métodos parse!!
+//NOTE Aqui segue como implementar métodos parse em classes com o formato DataModel!!
 
   ///Método que cria um mapa a partir dos parâmetros da classe
   Map<String, dynamic> toMap() {

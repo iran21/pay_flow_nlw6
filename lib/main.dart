@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:payflow/modules/barcode/barcode_scanner_page.dart';
 import 'package:payflow/modules/login/login_page.dart';
 import 'package:payflow/modules/home/home_page.dart';
@@ -39,7 +40,13 @@ class _AppFirebaseState extends State<AppFirebase> {
 }
 
 class AppWidget extends StatelessWidget {
-  const AppWidget({Key? key}) : super(key: key);
+  AppWidget({Key? key}) : super(key: key) {
+    //NOTE Aqui segue como fixar a rotação do celular
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ]);
+  }
 
   @override
   Widget build(BuildContext context) {
