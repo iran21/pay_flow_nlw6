@@ -40,11 +40,10 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
             builder: (_, barcodeStatus, __) {
               if (barcodeStatus.showCamera) {
                 return Container(
-                  child: barcodeStatus.controller!.buildPreview(),
+                  child: controller.cameraController!.buildPreview(),
                 );
               } else {
                 return Container(
-                  color: Colors.red,
                 );
               }
             },
@@ -91,7 +90,9 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
               if (barcodeStatus.hasError) {
                 return BottomSheetWidget(
                   firstLabel: 'Escanear Novamente',
-                  firstPressed: controller.getAvailableCameras,
+                  firstPressed: (){
+                    controller.scanWithCamera();
+                  },
                   secondLabel: 'Digitar Código',
                   secondPressed: () {},
                   title: 'Não foi possível escanear o código do seu boleto',
